@@ -9,12 +9,12 @@ public class CharacterControllerScript : MonoBehaviour {
 
     Animator anim;
 
-	// Use this for initialization
+	/// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
+	/// Update is called once per frame
 	void FixedUpdate () {
         float move = Input.GetAxis("Horizontal");
 
