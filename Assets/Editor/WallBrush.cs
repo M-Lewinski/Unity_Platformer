@@ -14,7 +14,6 @@ public class WallBrush : GridBrush
     {
         Tilemap tilemap = gridLayout.GetComponent<Tilemap>();
         int randomTile = UnityEngine.Random.Range(0, randomSprites.Length);
-        tilemap.SetTile(position,randomSprites[randomTile]);
     }
 
     // Use this for initialization
