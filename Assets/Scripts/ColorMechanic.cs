@@ -16,6 +16,9 @@ public class ColorMechanic : MonoBehaviour
 
     private Color returnColor;
 
+    private int normalLayer = 0;
+    private int fadedLayer = 15;
+
     private Colorbase playerPrevoiusColor;
 
     void Start()
@@ -40,19 +43,21 @@ public class ColorMechanic : MonoBehaviour
         if ((playerChanged = currentColor != playerPrevoiusColor)) playerPrevoiusColor = currentColor;
         if (colorId == currentColor.colorId)
         {
-            ChangeState(false,fadeColor,playerChanged);
+            ChangeState(true,fadeColor,playerChanged);
         }
         else
         {
-            ChangeState(true,returnColor,playerChanged);
+            ChangeState(false,returnColor,playerChanged);
         }
     }
 
-    private void ChangeState(bool collision,Color changeToColor, bool playerChanged)
+    private void ChangeState(bool noCollision,Color changeToColor, bool playerChanged)
     {
         if (playerChanged)
         {
-            collider2D.enabled = collision;
+            collider2D.isTrigger = noCollision;
+            if (noCollision) gameObject.layer = fadedLayer;
+            else gameObject.layer = normalLayer;
             Fadeing(changeToColor);
         }
     }
@@ -64,14 +69,8 @@ public class ColorMechanic : MonoBehaviour
             if (colorbase.colorId == colorId)
             {
                 SpriteRenderer SpriteRenderer = GetComponent<SpriteRenderer>();
-                if (SpriteRenderer != null)
-                {
-                    SpriteRenderer.color = colorbase.colorBlock;
-                }
-                else
-                {
-                    GetComponent<Tilemap>().color = colorbase.colorBlock;
-                }
+
+                gameObject.ChangeRendererColor(colorbase.colorBlock);
                 returnColor = colorbase.colorBlock;
                 fadeColor = new Color(colorbase.colorBlock.r, colorbase.colorBlock.g, colorbase.colorBlock.b, colorbase.colorBlock.a * 0.5f);
                 break;
@@ -81,15 +80,28 @@ public class ColorMechanic : MonoBehaviour
 
     public void Fadeing(Color colorChange)
     {
-        SpriteRenderer SpriteRenderer = GetComponent<SpriteRenderer>();
-        if (SpriteRenderer != null)
+        if (collider2D.enabled == false)
         {
-            SpriteRenderer.color = colorChange;
+            return;
         }
-        else
+        gameObject.ChangeRendererColor(colorChange);
+    }
+
+  
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "Character")
         {
-            Tilemap tilemap = GetComponent<Tilemap>();
-            tilemap.color = colorChange;
+            colorPlayer.ableToChange = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "Character")
+        {
+            colorPlayer.ableToChange = true;
         }
     }
 }

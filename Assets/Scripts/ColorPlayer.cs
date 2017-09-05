@@ -15,6 +15,8 @@ public class ColorPlayer : MonoBehaviour
     public List<Colorbase> availableColors;
 
     public List<Colorbase> allColors;
+
+    public bool ableToChange = true;
     // Use this for initialization
 	void Start ()
 	{
@@ -52,7 +54,8 @@ public class ColorPlayer : MonoBehaviour
 
     public void changeColor(Colorbase colorbase)
     {
-        if (currentColor != colorbase)
+        
+        if (ableToChange && currentColor != colorbase)
         {
             currentColor = colorbase;
             sprite.color = currentColor.colorPlayer;
