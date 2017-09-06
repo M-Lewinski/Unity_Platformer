@@ -6,7 +6,7 @@ public class CameraFollowCharacter : MonoBehaviour
 {
 
     public Transform target;
-    public float dampTime = 0.15f;
+    public float dampTime = 0.12f;
     public Vector3 velocity = Vector3.zero;
 
     public Camera camera;
