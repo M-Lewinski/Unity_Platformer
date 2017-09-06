@@ -17,7 +17,7 @@ public class ToggleObjects : MonoBehaviour
 
     void Awake()
     {
-
+        collider2D = GetComponent<Collider2D>();
         switchMechanic = switcher.GetComponent<SwitchMechanic>();
     }
     void OnEnable()
@@ -47,7 +47,6 @@ public class ToggleObjects : MonoBehaviour
     }
 
     void Start () {
-        collider2D = GetComponent<Collider2D>();
 
     }
 
