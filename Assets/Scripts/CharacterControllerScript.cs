@@ -17,7 +17,7 @@ public class CharacterControllerScript : MonoBehaviour {
     public float jumpForce = 4f;
 
     Animator anim;
-    private Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
 
 	void Start () {
         anim = GetComponent<Animator>();
@@ -28,9 +28,14 @@ public class CharacterControllerScript : MonoBehaviour {
     {
         if(grounded && Input.GetKeyDown(KeyCode.W))
         {
-            anim.SetBool("Ground",false);
-            rigidbody2D.AddForce(new Vector2(0, jumpForce));            
+            ForceUp(new Vector2(0, jumpForce));
         }
+    }
+
+    public void ForceUp(Vector2 force)
+    {
+        anim.SetBool("Ground", false);
+        rigidbody2D.AddForce(force);
     }
 
     /// <summary>
