@@ -5,13 +5,19 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour {
 
     public string startLevel;
+
     public string optionsScene;
 
-
+    public string levelSelect;
 
     public void NewGame()
     {
         Application.LoadLevel(startLevel);
+    }
+
+    public void LevelSelect()
+    {
+        Application.LoadLevel(levelSelect);
     }
 
     public void GameOptions()
