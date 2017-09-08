@@ -32,7 +32,7 @@ public class ColorPlayer : MonoBehaviour
                 }
 	        }
 	    }
-        changeColor(availableColors[0]);
+        if (availableColors.Count > 0) changeColor(availableColors[0]);
     }
 	
 	// Update is called once per frame
