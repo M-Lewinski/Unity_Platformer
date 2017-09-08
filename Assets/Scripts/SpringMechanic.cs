@@ -39,10 +39,12 @@ public class SpringMechanic : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collision.name == "Character" && launch)
+        if (collision.name == "Character" && launch && character.grounded)
         {
-            character.rigidbody2D.velocity = new Vector3(0.0f,0.0f,0.0f);
+            character.rigidbody2D.velocity = new Vector2(0.0f,0.0f);
+            character.rigidbody2D.angularVelocity = 0.0f;
             character.ForceUp(new Vector2(0, force));
+            launch = false;
         }
     }
 

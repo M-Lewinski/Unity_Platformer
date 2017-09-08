@@ -26,16 +26,20 @@ public class CharacterControllerScript : MonoBehaviour {
 
     void Update()
     {
-        if(grounded && Input.GetKeyDown(KeyCode.W))
+        if (grounded && Input.GetKeyDown(KeyCode.W))
         {
             ForceUp(new Vector2(0, jumpForce));
         }
+
     }
 
     public void ForceUp(Vector2 force)
     {
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0.0f);
+        rigidbody2D.angularVelocity = 0.0f;
         anim.SetBool("Ground", false);
         rigidbody2D.AddForce(force);
+        grounded = false;
     }
 
     /// <summary>
@@ -45,6 +49,7 @@ public class CharacterControllerScript : MonoBehaviour {
     {
         MoveY();
         MoveX();
+
     }
 
     private void MoveY()
@@ -78,4 +83,5 @@ public class CharacterControllerScript : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-}
+
+ }

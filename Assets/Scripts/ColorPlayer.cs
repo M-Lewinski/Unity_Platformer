@@ -61,4 +61,25 @@ public class ColorPlayer : MonoBehaviour
             sprite.color = currentColor.colorPlayer;
         }
     }
+
+    public void AddAvailableColor(ColorId newColor)
+    {
+        if (availableColorsId.Contains(newColor)) return;
+        availableColorsId.Add(newColor);
+        foreach (var colorbase in allColors)
+        {
+            if (colorbase.colorId == newColor)
+            {
+                availableColors.Add(colorbase);
+            }
+        }
+    }
+
+    public Colorbase GetColorbase(ColorId colorId)
+    {        
+        return allColors.Find(x => x.colorId == colorId);
+    }
+
+
+
 }
