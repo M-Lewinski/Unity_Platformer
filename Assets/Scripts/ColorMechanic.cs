@@ -68,8 +68,6 @@ public class ColorMechanic : MonoBehaviour
         {
             if (colorbase.colorId == colorId)
             {
-                SpriteRenderer SpriteRenderer = GetComponent<SpriteRenderer>();
-
                 gameObject.ChangeRendererColor(colorbase.colorBlock);
                 returnColor = colorbase.colorBlock;
                 fadeColor = new Color(colorbase.colorBlock.r, colorbase.colorBlock.g, colorbase.colorBlock.b, colorbase.colorBlock.a * 0.5f);

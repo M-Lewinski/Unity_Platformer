@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 6d2d247be1717f64f8f793e071311581
-timeCreated: 1504899454
+guid: 8a13bd1c211da2145b3d0c35427c7d9e
+timeCreated: 1504899935
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 2048x256_0
-    21300002: 2048x256_1
-    21300004: 2048x256_2
-    21300006: 2048x256_3
-    21300008: 2048x256_4
-    21300010: 2048x256_5
-    21300012: 2048x256_6
-    21300014: 2048x256_7
-    21300016: 2048x256_8
-    21300018: 2048x256_9
-    21300020: 2048x256_10
-    21300022: 2048x256_11
-    21300024: 2048x256_12
-    21300026: 2048x256_13
-    21300028: 2048x256_14
-    21300030: 2048x256_15
+    21300000: pickupColor_0
+    21300002: pickupColor_1
+    21300004: pickupColor_2
+    21300006: pickupColor_3
+    21300008: pickupColor_4
+    21300010: pickupColor_5
+    21300012: pickupColor_6
+    21300014: pickupColor_7
+    21300016: pickupColor_8
+    21300018: pickupColor_9
+    21300020: pickupColor_10
+    21300022: pickupColor_11
+    21300024: pickupColor_12
+    21300026: pickupColor_13
+    21300028: pickupColor_14
+    21300030: pickupColor_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -94,7 +94,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2048x256_0
+      name: pickupColor_0
       rect:
         serializedVersion: 2
         x: 68
@@ -108,7 +108,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_1
+      name: pickupColor_1
       rect:
         serializedVersion: 2
         x: 240
@@ -122,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_2
+      name: pickupColor_2
       rect:
         serializedVersion: 2
         x: 398
@@ -136,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_3
+      name: pickupColor_3
       rect:
         serializedVersion: 2
         x: 542
@@ -150,7 +150,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_4
+      name: pickupColor_4
       rect:
         serializedVersion: 2
         x: 674
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_5
+      name: pickupColor_5
       rect:
         serializedVersion: 2
         x: 793
@@ -178,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_6
+      name: pickupColor_6
       rect:
         serializedVersion: 2
         x: 902
@@ -192,7 +192,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_7
+      name: pickupColor_7
       rect:
         serializedVersion: 2
         x: 1003
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_8
+      name: pickupColor_8
       rect:
         serializedVersion: 2
         x: 1094
@@ -220,7 +220,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_9
+      name: pickupColor_9
       rect:
         serializedVersion: 2
         x: 1169
@@ -234,7 +234,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_10
+      name: pickupColor_10
       rect:
         serializedVersion: 2
         x: 1260
@@ -248,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_11
+      name: pickupColor_11
       rect:
         serializedVersion: 2
         x: 1361
@@ -262,7 +262,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_12
+      name: pickupColor_12
       rect:
         serializedVersion: 2
         x: 1470
@@ -276,7 +276,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_13
+      name: pickupColor_13
       rect:
         serializedVersion: 2
         x: 1590
@@ -290,7 +290,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_14
+      name: pickupColor_14
       rect:
         serializedVersion: 2
         x: 1721
@@ -304,7 +304,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 2048x256_15
+      name: pickupColor_15
       rect:
         serializedVersion: 2
         x: 1866

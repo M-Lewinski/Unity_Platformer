@@ -22,5 +22,12 @@ namespace Assets.Scripts
                 tilemap.color = colorChange;
             }
         }
+
+        public static Vector2 Rotate2D(this GameObject gameObject, float degrees, Vector2 vector)
+        {
+            Vector3 vector3D = Quaternion.AngleAxis(degrees, -Vector3.forward) * vector;
+            return new Vector2(vector3D.x,vector3D.y);
+        }
+
     }
 }

@@ -11,12 +11,21 @@ namespace Assets.Scripts
     {
         public Color colorPlayer;
         public Color colorBlock;
+        public Color colorWheel;
         public ColorId colorId;
         
         public Colorbase(Color colorPlayer, Color colorBlock, ColorId colorId)
         {
             this.colorPlayer = colorPlayer;
             this.colorBlock = colorBlock;
+            this.colorId = colorId;
+        }
+
+        public Colorbase(Color colorPlayer, Color colorBlock, Color colorWheel, ColorId colorId)
+        {
+            this.colorPlayer = colorPlayer;
+            this.colorBlock = colorBlock;
+            this.colorWheel = colorWheel;
             this.colorId = colorId;
         }
     }

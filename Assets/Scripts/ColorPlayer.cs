@@ -32,7 +32,7 @@ public class ColorPlayer : MonoBehaviour
                 }
 	        }
 	    }
-        changeColor(availableColors[0]);
+        if (availableColors.Count > 0) changeColor(availableColors[0]);
     }
 	
 	// Update is called once per frame
@@ -61,4 +61,25 @@ public class ColorPlayer : MonoBehaviour
             sprite.color = currentColor.colorPlayer;
         }
     }
+
+    public void AddAvailableColor(ColorId newColor)
+    {
+        if (availableColorsId.Contains(newColor)) return;
+        availableColorsId.Add(newColor);
+        foreach (var colorbase in allColors)
+        {
+            if (colorbase.colorId == newColor)
+            {
+                availableColors.Add(colorbase);
+            }
+        }
+    }
+
+    public Colorbase GetColorbase(ColorId colorId)
+    {        
+        return allColors.Find(x => x.colorId == colorId);
+    }
+
+
+
 }
