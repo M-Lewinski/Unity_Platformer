@@ -16,9 +16,9 @@ public class KillPlayer : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.name == "Character")
+        if (collision.collider.name == "Character")
         {
             levelManager.RespawnPlayer();
         }
