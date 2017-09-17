@@ -37,8 +37,11 @@ public class ColorWheel : MonoBehaviour
 
     private float distance2 = 0.1f;
 
+    public bool showCursor = false;
+
     void Start()
     {
+        Cursor.visible = showCursor;
         wheelCanvas = new GameObject();
         wheelCanvas.name = "ColorWheelCanvas";
         wheelCanvas.AddComponent<RectTransform>();
