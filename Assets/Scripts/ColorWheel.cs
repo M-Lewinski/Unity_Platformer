@@ -47,6 +47,7 @@ public class ColorWheel : MonoBehaviour
         wheelCanvas.AddComponent<CanvasScaler>();
         wheelCanvas.AddComponent<GraphicRaycaster>();
         colorPlayer = FindObjectOfType<ColorPlayer>();
+        camera = FindObjectOfType<Camera>();
     }
 
     void Update()
