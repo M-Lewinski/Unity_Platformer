@@ -104,7 +104,6 @@ public class ColorWheel : MonoBehaviour
                     }
                     currentRing = (index *2)+1;
                     ChangeRingAlpha(1.0f);
-                    Debug.Log(currentRing);
                 }
             }
         }

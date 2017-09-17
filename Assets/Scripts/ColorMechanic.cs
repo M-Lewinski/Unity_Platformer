@@ -16,8 +16,8 @@ public class ColorMechanic : MonoBehaviour
 
     private Color returnColor;
 
-    private int normalLayer = 0;
-    private int fadedLayer = 15;
+    private int normalLayer;
+    private int fadedLayer = 16;
 
     private Colorbase playerPrevoiusColor;
 
@@ -25,6 +25,7 @@ public class ColorMechanic : MonoBehaviour
     {
         collider2D = GetComponent<Collider2D>();
         colorPlayer = FindObjectOfType<ColorPlayer>();
+        normalLayer = gameObject.layer;
         FindColor();
         CheckPlayerColor();
     }
