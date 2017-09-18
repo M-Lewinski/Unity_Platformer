@@ -16,6 +16,8 @@ public class ColorPlayer : MonoBehaviour
 
     public List<Colorbase> allColors;
 
+    private Colorbase previousColor = null;
+
     public bool ableToChange = true;
     // Use this for initialization
 	void Start ()
@@ -33,7 +35,8 @@ public class ColorPlayer : MonoBehaviour
 	        }
 	    }
         if (availableColors.Count > 0) changeColor(availableColors[0]);
-    }
+	    previousColor = currentColor;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,12 +47,9 @@ public class ColorPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            changeColor(availableColors[0]);
+            changeColor(previousColor);
         }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            changeColor(availableColors[1]);
-        }
+        
     }
 
     public void changeColor(Colorbase colorbase)
@@ -57,6 +57,7 @@ public class ColorPlayer : MonoBehaviour
         
         if (ableToChange && currentColor != colorbase)
         {
+            previousColor = currentColor;
             currentColor = colorbase;
             sprite.color = currentColor.colorPlayer;
         }

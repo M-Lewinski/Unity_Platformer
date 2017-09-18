@@ -35,6 +35,7 @@ namespace Assets.Scripts
         Red,
         Blue,
         Green,
-        Yellow
+        Yellow,
+        purple
     } 
 }
