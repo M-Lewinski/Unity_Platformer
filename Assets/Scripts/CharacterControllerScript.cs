@@ -26,7 +26,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
     void Update()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.W))
+        if (grounded && Input.GetButtonDown("Jump"))
         {
             ForceUp(new Vector2(0, jumpForce));
         }
