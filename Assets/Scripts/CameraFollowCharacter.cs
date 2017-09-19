@@ -10,9 +10,10 @@ public class CameraFollowCharacter : MonoBehaviour
     public Vector3 velocity = Vector3.zero;
 
     public Camera camera;
-	
+
+
     // Use this for initialization
-	void Start ()
+    void Start ()
 	{
 	    camera = GetComponent<Camera>();
 	}

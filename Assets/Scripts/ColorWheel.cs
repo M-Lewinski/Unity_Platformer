@@ -39,6 +39,8 @@ public class ColorWheel : MonoBehaviour
 
     public bool showCursor = false;
 
+    private PauseMenu pauseMenu;
+
     void Start()
     {
         Cursor.visible = showCursor;
@@ -51,10 +53,20 @@ public class ColorWheel : MonoBehaviour
         wheelCanvas.AddComponent<GraphicRaycaster>();
         colorPlayer = FindObjectOfType<ColorPlayer>();
         camera = FindObjectOfType<Camera>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     void Update()
     {
+        if (pauseMenu != null && pauseMenu.isPaused)
+        {
+            if (showWheel)
+            {
+                showWheel = false;
+                DestroyWheel();
+            }
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && !showWheel)
         {
             CreateNewWheel();

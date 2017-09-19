@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(MovingPlatform))]
+[CustomEditor(typeof(MovingObject))]
 public class MovingPlatformInspector : Editor {
 
 	    public override void OnInspectorGUI()
 	    {
 	        base.OnInspectorGUI();
-	        MovingPlatform movingPlatform = (MovingPlatform) target;
-	        if (GUILayout.Button("Register begin position"))
+	        MovingObject movingObject = (MovingObject) target;
+	        if (GUILayout.Button("Register new point"))
 	        {
-	            movingPlatform.beginPosition = movingPlatform.transform.position;
+                if(movingObject.pointsList == null) movingObject.pointsList = new List<Vector3>();
+	            movingObject.pointsList.Add(movingObject.transform.position);
 	        }
-	        else if (GUILayout.Button("Register destination position"))
+	        else if (GUILayout.Button("Move to beginning"))
 	        {
-	            movingPlatform.destinationPosition = movingPlatform.transform.position;
-	        }
-            else if (GUILayout.Button("Move to beginning"))
-	        {
-	            movingPlatform.transform.position = movingPlatform.beginPosition;
+                if (movingObject.pointsList.Count > 0)
+	             movingObject.transform.position = movingObject.pointsList[0];
             }
 	        else if (GUILayout.Button("Move to destination"))
 	        {
-	            movingPlatform.transform.position = movingPlatform.destinationPosition;
+                if (movingObject.pointsList.Count > 0)
+	             movingObject.transform.position = movingObject.pointsList[movingObject.pointsList.Count-1];
 	        }
 
     }

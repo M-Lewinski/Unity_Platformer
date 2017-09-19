@@ -40,6 +40,8 @@ public class PauseMenu : MonoBehaviour {
 
     public void LevelSelect()
     {
+        Time.timeScale = 1f;
+        isPaused = false;
         Application.LoadLevel(levelSelect);
     }
 
@@ -51,6 +53,8 @@ public class PauseMenu : MonoBehaviour {
 
     public void Quit()
     {
+        Time.timeScale = 1f;
+        isPaused = false;
         Application.LoadLevel(mainMenu);
     }
 }

@@ -40,15 +40,15 @@ public class ColorPlayer : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+	    if (Input.GetKeyDown(KeyCode.Q))
+	    {
+	        changeColor(previousColor);
+	    }
+    }
 
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            changeColor(previousColor);
-        }
+
         
     }
 
