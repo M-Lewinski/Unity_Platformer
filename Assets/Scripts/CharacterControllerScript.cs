@@ -16,7 +16,7 @@ public class CharacterControllerScript : MonoBehaviour {
     public LayerMask whatIsGround; // On which objects our character can land on
     public float jumpForce = 4f;
 
-    Animator anim;
+    public Animator anim;
     public Rigidbody2D rigidbody2D;
 
 	void Start () {
@@ -26,7 +26,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
     void Update()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.W))
+        if (grounded && Input.GetButtonDown("Jump"))
         {
             ForceUp(new Vector2(0, jumpForce));
         }

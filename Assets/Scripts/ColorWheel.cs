@@ -37,8 +37,13 @@ public class ColorWheel : MonoBehaviour
 
     private float distance2 = 0.1f;
 
+    public bool showCursor = false;
+
+    private PauseMenu pauseMenu;
+
     void Start()
     {
+        Cursor.visible = showCursor;
         wheelCanvas = new GameObject();
         wheelCanvas.name = "ColorWheelCanvas";
         wheelCanvas.AddComponent<RectTransform>();
@@ -48,10 +53,20 @@ public class ColorWheel : MonoBehaviour
         wheelCanvas.AddComponent<GraphicRaycaster>();
         colorPlayer = FindObjectOfType<ColorPlayer>();
         camera = FindObjectOfType<Camera>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     void Update()
     {
+        if (pauseMenu != null && pauseMenu.isPaused)
+        {
+            if (showWheel)
+            {
+                showWheel = false;
+                DestroyWheel();
+            }
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && !showWheel)
         {
             CreateNewWheel();

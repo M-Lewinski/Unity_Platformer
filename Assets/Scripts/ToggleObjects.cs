@@ -6,7 +6,7 @@ using UnityEngine;
 public class ToggleObjects : MonoBehaviour
 {
 
-    public bool toggle = false;
+    public bool toggleOff = false;
     public GameObject switcher;
     private SwitchMechanic switchMechanic;
     private Collider2D collider2D;
@@ -22,26 +22,42 @@ public class ToggleObjects : MonoBehaviour
     }
     void OnEnable()
     {
-        switchMechanic.onAction += OnToggleSwitch;
-        switchMechanic.offAction += OffToggleSwitch;
+        if (!toggleOff)
+        {
+            switchMechanic.onAction += OnToggleSwitch;
+            switchMechanic.offAction += OffToggleSwitch;
+        }
+        else
+        {
+            switchMechanic.onAction += OffToggleSwitch;
+            switchMechanic.offAction += OnToggleSwitch;
+        }
     }
 
     void OnDisable()
     {
-        switchMechanic.onAction -= OnToggleSwitch;
-        switchMechanic.offAction -= OffToggleSwitch;
+        if (!toggleOff)
+        {
+            switchMechanic.onAction -= OnToggleSwitch;
+            switchMechanic.offAction -= OffToggleSwitch;
+        }
+        else
+        {
+            switchMechanic.onAction -= OffToggleSwitch;
+            switchMechanic.offAction -= OnToggleSwitch;
+        }
 
     }
 
     public void OnToggleSwitch()
     {
-        collider2D.enabled = true;
+        collider2D.isTrigger = false;
         gameObject.ChangeRendererColor(onColor);
     }
 
     public void OffToggleSwitch()
     {
-        collider2D.enabled = false;
+        collider2D.isTrigger = true;
 
         gameObject.ChangeRendererColor(offColor);
     }

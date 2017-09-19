@@ -17,12 +17,14 @@ public class PauseMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(isPaused)
-        {
+		{
+		    Cursor.visible = true;
             pauseMenuCanvas.SetActive(true);
             Time.timeScale = 0f;
         }
         else
-        {
+		{
+		    Cursor.visible = false;
             pauseMenuCanvas.SetActive(false);
             Time.timeScale = 1f;
         }
@@ -40,6 +42,8 @@ public class PauseMenu : MonoBehaviour {
 
     public void LevelSelect()
     {
+        Time.timeScale = 1f;
+        isPaused = false;
         Application.LoadLevel(levelSelect);
     }
 
@@ -51,6 +55,8 @@ public class PauseMenu : MonoBehaviour {
 
     public void Quit()
     {
+        Time.timeScale = 1f;
+        isPaused = false;
         Application.LoadLevel(mainMenu);
     }
 }
