@@ -13,9 +13,17 @@ public class PauseMenu : MonoBehaviour {
     public bool isPaused;
 
     public GameObject pauseMenuCanvas;
-    
-	// Update is called once per frame
-	void Update () {
+
+    public LevelManager levelManager;
+
+    // Use this for initialization
+    void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if(isPaused)
 		{
 		    Cursor.visible = true;
@@ -38,6 +46,17 @@ public class PauseMenu : MonoBehaviour {
     public void Resume()
     {
         isPaused = false;
+    }
+
+    public void Restart()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void GoToLastCheckpoint()
+    {
+        levelManager.RespawnPlayer();
+        Resume();
     }
 
     public void LevelSelect()

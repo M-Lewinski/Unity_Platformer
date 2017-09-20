@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour {
 
     public string levelSelect;
 
+    public string creditsScene;
+
     public void NewGame()
     {
         Application.LoadLevel(startLevel);
@@ -22,9 +24,12 @@ public class MainMenu : MonoBehaviour {
 
     public void GameOptions()
     {
-        Debug.Log("GameOptions selected");
-        //Here will be game options
-        //Application.LoadLevel(optionsScene);
+        Application.LoadLevel(optionsScene);
+    }
+
+    public void ShowCredits()
+    {
+        Application.LoadLevel(creditsScene);
     }
 
     public void QuitGame()
