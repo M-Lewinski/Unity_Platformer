@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformPhysics : MonoBehaviour {
-
-
+public class PlatformPhysics : MonoBehaviour
+{
 
     void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.collider.name == "Character")
         {
-            collision.collider.transform.parent = transform;
+            if(collision.collider.transform.parent== null)
+             collision.collider.transform.parent = transform;
         }
     }
 
@@ -20,7 +20,8 @@ public class PlatformPhysics : MonoBehaviour {
 
         if (collision.collider.name == "Character")
         {
-            collision.collider.transform.parent = null;
+            if (collision.collider.transform.parent != null)
+                collision.collider.transform.parent = null;
         }
     }
 

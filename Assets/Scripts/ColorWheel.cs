@@ -90,6 +90,7 @@ public class ColorWheel : MonoBehaviour
         CreateWheel();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void SelectColor()

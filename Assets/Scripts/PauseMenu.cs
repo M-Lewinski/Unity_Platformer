@@ -13,18 +13,28 @@ public class PauseMenu : MonoBehaviour {
     public bool isPaused;
 
     public GameObject pauseMenuCanvas;
-    
-	// Update is called once per frame
-	void Update () {
+
+    public LevelManager levelManager;
+
+    // Use this for initialization
+    void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if(isPaused)
-		{
-		    Cursor.visible = true;
+        {
+           Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             pauseMenuCanvas.SetActive(true);
             Time.timeScale = 0f;
         }
         else
 		{
-		    Cursor.visible = false;
+		    Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
             pauseMenuCanvas.SetActive(false);
             Time.timeScale = 1f;
         }
@@ -37,7 +47,19 @@ public class PauseMenu : MonoBehaviour {
 
     public void Resume()
     {
+//        Cursor.lockState = CursorLockMode.Confined;
         isPaused = false;
+    }
+
+    public void Restart()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void GoToLastCheckpoint()
+    {
+        levelManager.RespawnPlayer();
+        Resume();
     }
 
     public void LevelSelect()
@@ -55,8 +77,9 @@ public class PauseMenu : MonoBehaviour {
 
     public void Quit()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 1f;
-        isPaused = false;
         Application.LoadLevel(mainMenu);
     }
 }
