@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Options : MonoBehaviour {
 
-    public string mainMenu;
+
+    public GameObject previousMenu;
+
+    public MainMenu mainMenu;
+
+    void Start()
+    {
+    }
 
     public void MainMenu()
     {
-        Application.LoadLevel(mainMenu);
+        mainMenu.ChangeSubMenu(previousMenu);
     }
 }

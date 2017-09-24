@@ -21,5 +21,6 @@ public class LevelManager : MonoBehaviour {
     {
         Debug.Log("Player Respawn");
         player.transform.position = currentCheckpoint.transform.position;
+        player.transform.parent = null;
     }
 }
