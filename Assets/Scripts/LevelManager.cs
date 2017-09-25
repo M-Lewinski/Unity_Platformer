@@ -20,7 +20,15 @@ public class LevelManager : MonoBehaviour {
     public void RespawnPlayer()
     {
         Debug.Log("Player Respawn");
-        player.transform.position = currentCheckpoint.transform.position;
-        player.transform.parent = null;
+        if (currentCheckpoint != null)
+        {
+            CheckPointEvent checkPointEvent = currentCheckpoint.GetComponent<CheckPointEvent>();
+            if (checkPointEvent != null)
+            {
+                checkPointEvent.RestartObjects();
+            }
+            player.transform.position = currentCheckpoint.transform.position;
+            player.transform.parent = null;
+        }
     }
 }
